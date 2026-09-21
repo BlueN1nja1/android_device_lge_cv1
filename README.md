@@ -16,4 +16,4 @@ Display | 720 x 1280 pixels, 5.3 inches (~277 ppi pixel density)
 Camera  | 13 MP, f/2.2, 1/3", 1.12µm, AF
 
 ## Device Picture
-![LG Aristo 2](https://images-na.ssl-images-amazon.com/images/I/81mLeBeLmLL._SX679_.jpg "LG Aristo 2")
+![LG Aristo 2](https://www.gsmarena.com/lg_aristo_2-pictures-9047.php) "LG Aristo 2")
