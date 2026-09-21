@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Copyright (c) 2015 - 2016, The Linux Foundation. All rights reserved.         -->
+<!-- Copyright (c) 2015, The Linux Foundation. All rights reserved.         -->
 <!--                                                                        -->
 <!-- Redistribution and use in source and binary forms, with or without     -->
 <!-- modification, are permitted provided that the following conditions are -->
@@ -28,12 +28,66 @@
     <bit_width_configs>
         <device name="SND_DEVICE_OUT_SPEAKER" bit_width="24"/>
     </bit_width_configs>
-    <interface_names>
-        <device name="AUDIO_DEVICE_IN_BUILTIN_MIC" interface="SLIMBUS_0" codec_type="external"/>
-        <device name="AUDIO_DEVICE_IN_BACK_MIC" interface="SLIMBUS_0" codec_type="external"/>
-        <device name="AUDIO_DEVICE_IN_BUILTIN_MIC" interface="TERT_MI2S" codec_type="internal"/>
-        <device name="AUDIO_DEVICE_IN_BACK_MIC" interface="TERT_MI2S" codec_type="internal"/>
-    </interface_names>
+    <backend_names>
+        <device name="SND_DEVICE_OUT_HANDSET" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_SPEAKER" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_LINE" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" interface="PRI_MI2S_RX-and-PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_AND_VOICE_HEADPHONES" interface="PRI_MI2S_RX-and-PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_LINE" interface="PRI_MI2S_RX-and-PRI_MI2S_RX" />
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_LINE" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_HDMI" interface=""/>
+        <device name="SND_DEVICE_OUT_DISPLAY_PORT" interface=""/>
+        <device name="SND_DEVICE_OUT_BT_SCO" interface=""/>
+        <device name="SND_DEVICE_OUT_BT_SCO_WB" interface=""/>
+        <device name="SND_DEVICE_OUT_BT_A2DP" interface=""/>
+        <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_TTY_HCO_HANDSET" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_TX" interface=""/>
+        <device name="SND_DEVICE_OUT_AFE_PROXY" interface=""/>
+        <device name="SND_DEVICE_OUT_USB_HEADSET" interface=""/>
+        <device name="SND_DEVICE_OUT_VOICE_USB_HEADSET" interface=""/>
+        <device name="SND_DEVICE_OUT_USB_HEADPHONES" interface=""/>
+        <device name="SND_DEVICE_OUT_VOICE_USB_HEADPHONES" interface=""/>
+        <device name="SND_DEVICE_OUT_TRANSMISSION_FM" interface=""/>
+        <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED" interface=""/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_PROTECTED" interface=""/>
+        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_ADVANCED" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_AUX" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_HAC_EARPIECE" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOICE_HEADPHONES_ADVANCED" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOICE_HEADPHONES_AUX" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_SPEAKER_AND_HEADPHONES_ADVANCED" interface="PRI_MI2S_RX-and-PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_SPEAKER_AND_HEADPHONES_AUX" interface="PRI_MI2S_RX-and-PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_LOOPBACK_HANDSET" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_LOOPBACK_SPEAKER" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_LOOPBACK_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_MT_LOOPBACK_HANDSET" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_MT_LOOPBACK_SPEAKER" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_BT_SCO_AND_SPEAKER" interface=""/>
+        <device name="SND_DEVICE_LGE_OUT_BT_SCO_WB_AND_SPEAKER" interface=""/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_HANDSET" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_SPEAKER" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_HEADPHONES_ADVANCED" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_HEADPHONES_AUX" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_BT_SCO" interface=""/>
+        <device name="SND_DEVICE_LGE_OUT_VOIP_BT_SCO_WB" interface=""/>
+        <device name="SND_DEVICE_LGE_OUT_HFP_SPEAKER" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_HFP_HEADPHONES" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_SPEAKER_PROT_FF" interface="PRI_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_HIFI_DAC" backend="QUIN_MI2S_RX" interface="QUIN_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_HIFI_DAC_ADVANCED" backend="QUIN_MI2S_RX" interface="QUIN_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_HIFI_DAC_AUX" backend="QUIN_MI2S_RX" interface="QUIN_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_SPEAKER_AND_HEADPHONES_DAC" backend="speaker-and-headphones-dac" interface="PRI_MI2S_RX-and-QUIN_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_SPEAKER_AND_HEADPHONES_DAC_ADVANCED" backend="speaker-and-headphones-dac" interface="PRI_MI2S_RX-and-QUIN_MI2S_RX"/>
+        <device name="SND_DEVICE_LGE_OUT_SPEAKER_AND_HEADPHONES_DAC_AUX" backend="speaker-and-headphones-dac" interface="PRI_MI2S_RX-and-QUIN_MI2S_RX"/>
+    </backend_names>
     <pcm_ids>
         <usecase name="USECASE_AUDIO_PLAYBACK_OFFLOAD2" type="out" id="24"/>
         <usecase name="USECASE_AUDIO_PLAYBACK_OFFLOAD3" type="out" id="27"/>
@@ -47,21 +101,10 @@
         <usecase name="USECASE_VOICEMMODE1_CALL" type="out" id="34"/>
         <usecase name="USECASE_VOICEMMODE2_CALL" type="in" id="35"/>
         <usecase name="USECASE_VOICEMMODE2_CALL" type="out" id="35"/>
+        <usecase name="USECASE_INCALL_MUSIC_UPLINK" type="in" id="1"/>
+        <usecase name="USECASE_INCALL_MUSIC_UPLINK" type="out" id="1"/>
+        <usecase name="USECASE_INCALL_MUSIC_UPLINK2" type="in" id="14"/>
+        <usecase name="USECASE_INCALL_MUSIC_UPLINK2" type="out" id="14"/>
     </pcm_ids>
-    <config_params>
-        <param key="spkr_1_tz_name" value="wsa881x.0f"/>
-        <param key="spkr_2_tz_name" value=""/>
-    </config_params>
-    <acdb_ids>
-        <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED" acdb_id="136"/>
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_PROTECTED" acdb_id="136"/>
-        <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED_VBAT" acdb_id="136"/>
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_PROTECTED_VBAT" acdb_id="136"/>
-        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="0"/>
-        <device name="SND_DEVICE_IN_HANDSET_MIC_EXTERNAL" acdb_id="0"/>
-        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="0"/>
-        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" acdb_id="0"/>
-        <device name="SND_DEVICE_IN_CAPTURE_VI_FEEDBACK" acdb_id="137"/>
-    </acdb_ids>
 </audio_platform_info>
 

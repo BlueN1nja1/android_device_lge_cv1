@@ -3,6 +3,29 @@ LOCAL_PATH := $(call my-dir)
 # Init scripts
 
 include $(CLEAR_VARS)
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE := android.hardware.sensors@1.0-service.cv1
+LOCAL_INIT_RC := android.hardware.sensors@1.0-service.cv1.rc
+LOCAL_MULTILIB := 32
+LOCAL_SRC_FILES := \
+        service.cpp \
+
+LOCAL_SHARED_LIBRARIES := \
+        liblog \
+        libcutils \
+        libdl \
+        libbase \
+        libutils \
+
+LOCAL_SHARED_LIBRARIES += \
+        libhidlbase \
+        libhidltransport \
+        android.hardware.sensors@1.0 \
+
+include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.variant.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
@@ -24,6 +47,14 @@ LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := fstab.qcom
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.power.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.qcom.power.rc
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -53,25 +84,17 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.baseband.sh
 LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := init.qcom.baseband.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := init.qcom.early_boot.sh
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS :=ETC
-LOCAL_SRC_FILES := init.qcom.early_boot.sh
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := init.qcom.post_boot.sh
-LOCAL_MODULE_TAGS := optional eng
+LOCAL_MODULE       := init.qcom.graphics.sh
+LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES := init.qcom.post_boot.sh
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
+LOCAL_SRC_FILES    := init.qcom.graphics.sh
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -88,6 +111,14 @@ LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := init.qcom.usb.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.recovery.qcom.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.recovery.qcom.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

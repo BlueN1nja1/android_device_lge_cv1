@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2019 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter cv1,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),cv1)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
@@ -53,7 +53,6 @@ $(LOCAL_BUILT_MODULE):
 	$(hide) echo "Making symlinks for wifi"
 	$(hide) mkdir -p $(dir $@)
 	$(hide) mkdir -p $(dir $(WCNSS_INI_SYMLINK))
-	$(hide) mkdir -p $(dir $(WCNSS_BIN_SYMLINK))
 	$(hide) rm -rf $@
 	$(hide) rm -rf $(WCNSS_INI_SYMLINK)
 	$(hide) ln -sf $(ACTUAL_INI_FILE) $(WCNSS_INI_SYMLINK)
@@ -64,12 +63,12 @@ $(LOCAL_BUILT_MODULE):
 	$(hide) touch $@
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
-IMS_SYMLINKS := $(addprefix $(TARGET_OUT_APPS_PRIVILEGED)/ims/lib/arm/,$(notdir $(IMS_LIBS)))
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT_APPS)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
 $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "IMS lib link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /system/lib/$(notdir $@) $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 

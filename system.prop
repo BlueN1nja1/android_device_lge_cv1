@@ -1,0 +1,8 @@
+ro.product.marketname=LG Aristo 2 Plus
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.vendor.radio.volte.dan_support=true
+fw.max_users=4
+fw.show_multiuserui=1
+ro.show_multiuserui=1

@@ -19,8 +19,8 @@
 from hashlib import sha1
 import sys
 
-device='cv1'
-vendor='lge'
+device='rolex'
+vendor='xiaomi'
 
 lines = [ line for line in open('proprietary-files.txt', 'r') ]
 vendorPath = '../../../vendor/' + vendor + '/' + device + '/proprietary'

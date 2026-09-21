@@ -1,0 +1,8 @@
+allow mm-qcamerad system_file:file r_file_perms;
+allow mm-qcamerad system_file:dir r_dir_perms;
+allow mm-qcamerad camera_data_file:dir create_dir_perms;
+allow mm-qcamerad camera_data_file:sock_file create_file_perms;
+allow hal_camera_default camera_data_file:dir search;
+allow hal_camera_default camera_data_file:sock_file write;
+allow hal_camera_default mm-qcamerad:unix_stream_socket connectto;
+set_prop(hal_camera_default, camera_prop)

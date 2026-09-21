@@ -1,21 +1,55 @@
-# Bluetooth
-/(vendor|system/vendor)/bin/hci_qcomm_init      u:object_r:bluetooth_loader_exec:s0
-
 # Block devices
 /dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
-/dev/block/bootdevice/by-name/userdata          u:object_r:userdata_block_device:s0
-/dev/block/bootdevice/by-name/modem             u:object_r:modem_block_device:s0
+/dev/block/bootdevice/by-name/userdata		u:object_r:userdata_block_device:s0
 
-# DRM
-/vendor/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey u:object_r:hal_drm_clearkey_exec:s0
-/vendor/bin/hw/android\.hardware\.drm@1\.1-service\.widevine u:object_r:hal_drm_widevine_exec:s0
+# Camera
+/system/etc/camera(/.*)?    u:object_r:vendor_file:s0
+
+# Crypto
+/dev/block/bootdevice/by-name/encrypt       u:object_r:metadata_block_device:s0
+/dev/block/mmcblk0p39                                    u:object_r:metadata_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/by-name/encrypt   u:object_r:metadata_block_device:s0
+
+# Data files
+/data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+
+# Firmware
+/firmware(/.*)?                 u:object_r:firmware_file:s0
+
+# GPS
+/system/vendor/bin/slim_daemon        u:object_r:location_exec:s0
+/vendor/bin/slim_daemon               u:object_r:location_exec:s0
+/system/vendor/bin/xtra-daemon        u:object_r:location_exec:s0
+/vendor/bin/xtra-daemon               u:object_r:location_exec:s0
 
 # Ir
 /dev/lirc[0-9]*					u:object_r:lirc_device:s0
 
-# Rild
-/(vendor|system/vendor)/radio/qcril_database/qcril.db	u:object_r:rild_file:s0
+# Init
+/system/vendor/bin/init\.qcom\.graphics\.sh                   u:object_r:qti_init_shell_exec:s0
+/vendor/bin/init\.qcom\.graphics\.sh                          u:object_r:qti_init_shell_exec:s0
+/system/vendor/bin/init\.qcom\.baseband\.sh                   u:object_r:qti_init_shell_exec:s0
+/vendor/bin/init\.qcom\.baseband\.sh                          u:object_r:qti_init_shell_exec:s0
 
-# Light
-/sys/devices/soc/78b6000\.i2c/i2c-2/2-[0-9a-f]+/leds(/.*)?    u:object_r:sysfs_leds:s0
+# LGE Touch
+/sys/devices/virtual/input/lge_touch/lpwg_notify    u:object_r:sysfs_lge_touch:s0
 
+# Light HAL
+/system/vendor/bin/hw/android\.hardware\.light@2\.0-service\.cv1    u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.light@2\.0-service\.cv1    u:object_r:hal_light_default_exec:s0
+
+# Modem
+/dev/block/mmcblk0p1        u:object_r:modem_block_device:s0
+/system/vendor/bin/qmuxd              u:object_r:qmuxd_exec:s0
+/data/vendor/tombstones/rfs(/.*)?               u:object_r:rfs_file:s0
+/vendor/bin/hw/rild                     u:object_r:rild_exec:s0
+/vendor/bin/qmuxd                       u:object_r:qmuxd_exec:s0
+/vendor/bin/netmgrd                     u:object_r:netmgrd_exec:s0
+/vendor/bin/hci_qcomm_init              u:object_r:bluetooth_loader_exec:s0
+
+# Sensors
+/sns/.*                                                             u:object_r:sensors_persist_file:s0
+/sns                                                             u:object_r:sensors_persist_file:s0
+/dev/block/bootdevice/by-name/sns                           u:object_r:sensors_persist_file:s0
+/system/vendor/bin/hw/android\.hardware\.sensors@1\.0-service\.cv1    u:object_r:hal_sensors_default_exec:s0
+/vendor/bin/hw/android\.hardware\.sensors@1\.0-service\.cv1    u:object_r:hal_sensors_default_exec:s0
